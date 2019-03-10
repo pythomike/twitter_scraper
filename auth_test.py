@@ -40,12 +40,11 @@ def favourite_iterator(maxId):
     favourite_parser(fav)
     maxId = tweet_id 
 
+# RUNNER CODE
+# favourite_parser(fav)
+# favourite_iterator(tweet_id)
 
-favourite_parser(fav)
-favourite_iterator(tweet_id)
-
-print(df.info())
-
-df.to_csv('faves.csv')
+# WRITER CODE
+# df.to_csv('faves.csv')
 
 
