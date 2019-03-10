@@ -9,8 +9,7 @@ api = twitter.Api(consumer_key=gear['api_key'],
                   )
 
 # Final DataFrame
-cols = ['text', 'user', 'created_at', 'id']
-df  = pd.DataFrame(columns=cols)
+df  = pd.DataFrame(columns=['text', 'user', 'created_at', 'id'])
 tweet_id = 0
 batch_length = 2
 running = True
