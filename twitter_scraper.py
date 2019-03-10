@@ -2,6 +2,10 @@ import twitter, json
 import pandas as pd
 from env import gear
 
+##########################################
+#  YOU'VE INVALIDATED ALL THE AUTH JUNK  #
+##########################################
+
 api = twitter.Api(consumer_key=gear['api_key'],
                   consumer_secret=gear['api_secret'],
                   access_token_key=gear['access_token'],
@@ -10,6 +14,8 @@ api = twitter.Api(consumer_key=gear['api_key'],
 
 def favourite_parser(fav):
   global df, tweet_id, batch_length
+  json_boye.append(fav)
+
   for i in fav:
     test= pd.DataFrame.from_dict({
                                 'text':[i['text']],
@@ -36,13 +42,14 @@ df  = pd.DataFrame(columns=['text', 'user', 'created_at', 'id'])
 tweet_id = 0
 batch_length = 2
 running = True
+json_boye = []
 
 # RUNNER CODE
-# fav = api.GetFavorites(screen_name='mjmorganti', count=200, return_json=True)
-# favourite_parser(fav)
-# favourite_iterator(tweet_id)
+fav = api.GetFavorites(screen_name='mjmorganti', count=200, return_json=True)
+favourite_parser(fav)
+favourite_iterator(tweet_id)
 
 # WRITER CODE
 # df.to_csv('faves.csv')
-
-
+with open('favourites_json.json', 'w') as file:
+  json.dump(json_boye, file)
