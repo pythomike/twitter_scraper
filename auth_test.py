@@ -8,15 +8,6 @@ api = twitter.Api(consumer_key=gear['api_key'],
                   access_token_secret=gear['access_token_secret']
                   )
 
-# Final DataFrame
-df  = pd.DataFrame(columns=['text', 'user', 'created_at', 'id'])
-tweet_id = 0
-batch_length = 2
-running = True
-
-# First Run - Newest
-fav = api.GetFavorites(screen_name='mjmorganti', count=200, return_json=True)
-
 def favourite_parser(fav):
   global df, tweet_id, batch_length
   for i in fav:
@@ -40,7 +31,14 @@ def favourite_iterator(maxId):
     favourite_parser(fav)
     maxId = tweet_id 
 
+# Final DataFrame
+df  = pd.DataFrame(columns=['text', 'user', 'created_at', 'id'])
+tweet_id = 0
+batch_length = 2
+running = True
+
 # RUNNER CODE
+# fav = api.GetFavorites(screen_name='mjmorganti', count=200, return_json=True)
 # favourite_parser(fav)
 # favourite_iterator(tweet_id)
 
