@@ -15,3 +15,5 @@ Downloads the most recent 200 liked tweets, and writes them into a CSV. Currentl
 - Handle images
 - What about threads?
 - ANALYZE!
+
+Extensively uses [Python Twitter](https://github.com/bear/python-twitter)
