@@ -56,4 +56,3 @@ favourite_iterator(tweet_id)
 # df.to_csv('faves.csv')
 with open('favourites_json.json', 'w') as file:
     json.dump(json_boye, file)
-\n
