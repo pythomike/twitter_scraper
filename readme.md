@@ -18,6 +18,7 @@ Downloads all available favourites, dumps everything into a JSON file, also pars
 - ANALYZE!
 - Dig through the monster JSON file, grab hashtags from each favourite
 - Group faves by hashtag/poster/subject matter
+- Can I set up the auth flow so someone can just enter their credentials?
 
 # Structure of `gear` object
 ```
