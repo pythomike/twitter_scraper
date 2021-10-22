@@ -9,6 +9,7 @@ Downloads all available favourites, dumps everything into a JSON file, also pars
 - The user who tweeted it
 - Created data (of the tweet)
 - ID (for eventual pagination)
+Blahgity blah blah blah
 
 # What needs to be done?
 - Grab full text of tweets
